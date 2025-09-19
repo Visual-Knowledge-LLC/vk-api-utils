@@ -9,7 +9,7 @@ class Config:
 
     # API URLs
     BASE_API_URL = os.environ.get("VK_API_URL", "https://api.visualknowledgeportal.com")
-    SLACK_API_URL = os.environ.get("VK_SLACK_API_URL", f"{BASE_API_URL}/slack/slack")  # Note: nginx proxies /slack/* to the service
+    SLACK_API_URL = os.environ.get("VK_SLACK_API_URL", f"{BASE_API_URL}/slack")
     SLACK_API_PORT = 8347  # Unique port for Slack API service
 
     # Authentication
