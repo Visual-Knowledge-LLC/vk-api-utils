@@ -82,9 +82,10 @@ class SlackClient:
             API response with thread_ts
         """
         endpoint = f"{self.api_url}/thread/start"
+        # Combine title and message for the text field
+        text = f"{title}\n{initial_message}" if title else initial_message
         payload = {
-            "title": title,
-            "initial_message": initial_message,
+            "text": text,
             "channel": channel or Config.DEFAULT_SLACK_CHANNEL
         }
 
@@ -120,7 +121,7 @@ class SlackClient:
         endpoint = f"{self.api_url}/thread/reply"
         payload = {
             "thread_ts": thread_ts,
-            "message": message,
+            "text": message,  # API expects 'text' field, not 'message'
             "channel": channel or Config.DEFAULT_SLACK_CHANNEL
         }
 
