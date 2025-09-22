@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="vk-api-utils",
-    version="0.1.2",
+    version="0.2.0",
     author="Visual Knowledge LLC",
     author_email="tech@visualknowledge.com",
     description="API utilities and client libraries for Visual Knowledge services",
@@ -26,6 +26,8 @@ setup(
     install_requires=[
         "requests>=2.28.0",
         "aiohttp>=3.8.0",
+        "psycopg2-binary>=2.9.0",
+        "sqlalchemy>=1.4.0",
     ],
     extras_require={
         "dev": [
